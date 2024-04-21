@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/main.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    {% include "dependency.html" %}
+    {% include "navbar.html" %}
+</head>
+
+
+<body>
+<div class="" style="padding: 15px;">
+    <div class="col">
+        <button class="btn btn-light">Kadın</button>
+        <button class="btn btn-light">Erkek</button>
+        <button class="btn btn-light">Divided</button>
+        <button class="btn btn-light">Bebek</button>
+        <button class="btn btn-light">Çocuk</button>
+        <button class="btn btn-light">H&M HOME</button>
+        <button class="btn btn-light">Spor</button>
+    </div>
+
+    {% include "slider.html" %}
+</div>
+
+</body>
+</html>
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<!-- Slick Carousel JS -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.slick-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: $('.slick-prev'),
+            nextArrow: $('.slick-next'),
+        });
+    });
+</script>

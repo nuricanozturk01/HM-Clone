@@ -1,0 +1,46 @@
+.my-nav {
+    padding: 60px;
+}
+
+.btn {
+    border-color: black !important;
+    border-radius: 15px !important;
+    font-weight: 500 !important;
+}
+
+.btn:hover {
+    background-color: red !important;
+    color: white !important;
+    border-color: red !important;
+}
+
+.slick-slide {
+    margin: 0 10px;
+    position: relative;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.fav-btn {
+    position: absolute;
+    bottom: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.fav-btn i {
+    color: #faf9f8;
+    border-color: black !important;
+}
+
+.slider-container {
+    background-color: #faf9f8;
+}
+
+.nav-link {
+    font-weight: 500 !important;
+}
