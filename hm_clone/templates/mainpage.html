@@ -13,38 +13,60 @@
 <body>
 <div class="" style="padding: 15px;">
     <div class="col">
-        <button class="btn btn-light">Kadın</button>
-        <button class="btn btn-light">Erkek</button>
-        <button class="btn btn-light">Divided</button>
-        <button class="btn btn-light">Bebek</button>
-        <button class="btn btn-light">Çocuk</button>
-        <button class="btn btn-light">H&M HOME</button>
-        <button class="btn btn-light">Spor</button>
+        <button id="kadınBtn" class="my-btn btn btn-light"
+                onclick="changeButtonColor('kadınBtn', '/find_products_by_category/Kadın')">Kadın
+        </button>
+        <button id="erkekBtn" class="my-btn btn btn-light"
+                onclick="changeButtonColor('erkekBtn', '/find_products_by_category/Erkek')">Erkek
+        </button>
+        <button id="divideBtn" class="my-btn btn btn-light"
+                onclick="changeButtonColor('divideBtn', '/find_products_by_category/Divide')">Divided
+        </button>
+        <button id="bebekBtn" class="my-btn btn btn-light"
+                onclick="changeButtonColor('bebekBtn', '/find_products_by_category/Bebek')">Bebek
+        </button>
+        <button id="çocukBtn" class="my-btn btn btn-light"
+                onclick="changeButtonColor('çocukBtn', '/find_products_by_category/Cocuk')">Çocuk
+        </button>
+        <button id="homeBtn" class="my-btn btn btn-light"
+                onclick="changeButtonColor('homeBtn', '/find_products_by_category/Home')">H&M HOME
+        </button>
+        <button id="sporBtn" class="my-btn btn btn-light"
+                onclick="changeButtonColor('sporBtn', '/find_products_by_category/Spor')">Spor
+        </button>
     </div>
 
-    {% include "slider.html" %}
+
+    <div class="slider-container container mt-5">
+        <div class="slick-slider">
+            {% set num_sliders = ((products|length - 1) // 4) + 1 %}
+            {% for slider_index in range(num_sliders) %}
+                <div class="slick-slide">
+                    <div class="row">
+                        {% set end_index = (slider_index + 1) * 4 %}
+                        {% for product_index in range(slider_index * 4, end_index if end_index <= products|length else products|length) %}
+                            <div class="col-md-3 position-relative">
+                                <img src="{{ products[product_index].images[0].name }}"
+                                     alt="{{ products[product_index].name }}"
+                                     onclick="clickProductHandle('{{ products[product_index].id }}')"
+                                     style="width: 200px;height: 300px;cursor: pointer">
+                                <button class="fav-btn position-absolute bottom-0 end-25"><i class="fa fa-heart"></i>
+                                </button>
+                                <p>{{ products[product_index].name }}</p>
+                                <p>{{ products[product_index].price }} TL</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 </body>
 </html>
 
-
-<!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-<!-- Slick Carousel JS -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-<script>
-    $(document).ready(function () {
-        $('.slick-slider').slick({
-            dots: true,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            prevArrow: $('.slick-prev'),
-            nextArrow: $('.slick-next'),
-        });
-    });
-</script>

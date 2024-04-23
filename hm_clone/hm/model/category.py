@@ -1,4 +1,6 @@
-from hm import db
+import json
+
+from hm.extensions import db
 
 
 class Category(db.Model):
@@ -8,3 +10,6 @@ class Category(db.Model):
 
     def __init__(self, name):
         self.name = name
+
+    def __repr__(self):
+        return json.dumps({'id': self.id, 'name': self.name})

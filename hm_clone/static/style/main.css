@@ -2,13 +2,13 @@
     padding: 60px;
 }
 
-.btn {
+.my-btn {
     border-color: black !important;
     border-radius: 15px !important;
     font-weight: 500 !important;
 }
 
-.btn:hover {
+.my-btn:hover {
     background-color: red !important;
     color: white !important;
     border-color: red !important;
@@ -43,4 +43,69 @@
 
 .nav-link {
     font-weight: 500 !important;
+}
+
+.my-btn .btn-selected {
+    background-color: #007bff !important;
+    color: #ffffff !important;
+}
+
+.icon-btn {
+    min-width: 48px;
+    min-height: 48px;
+    display: inline-flex;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.icon {
+    margin-inline-end: var(--spacing-xs-px);
+}
+
+.icon-input {
+    line-height: var(--body-text-default-default-size-line-height-number);
+    font-size: var(--body-text-default-default-size-font-size-rem);
+    font-family: var(--body-text-default-font-family);
+    font-weight: var(--body-text-default-font-weight);
+    text-transform: var(--body-text-default-text-transform);
+    height: auto;
+    padding: var(--spacing-xs-px) var(--spacing-s-px) var(--spacing-xs-px) var(--spacing-l-px);
+    color: var(--base-text);
+}
+
+.body-text-menu {
+    line-height: var(--body-text-meta-default-size-line-height-number);
+    font-size: var(--body-text-meta-default-size-font-size-rem);
+    font-family: var(--body-text-meta-font-family);
+    font-weight: var(--body-text-meta-font-weight);
+    text-transform: var(--body-text-meta-text-transform);
+}
+
+.my-input {
+    background-color: #faf9f8 !important;
+    border: none;
+    box-shadow: none;
+}
+
+.my-input:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.bg-custom {
+    background-color: #faf9f8 !important;
+}
+
+.list-group {
+    padding: 10px;
+}
+
+.li-item {
+    margin: 7px;
+}
+
+.size-btn {
+    padding: 20px !important;
+    background-color: #faf9f8 !important;
 }

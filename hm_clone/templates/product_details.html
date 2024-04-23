@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/main.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    {% include "dependency.html" %}
+    {% include "navbar.html" %}
+
+</head>
+<body>
+
+<div class="container-fluid mt-4">
+
+    <div class="col my-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <div>
+                            <img src="{{ product.images[0].name }}" width="350" height="450px"
+                                 alt="Koyu gri spor üstü" class="product-image">
+                            <img src="{{ product.images[0].name }}" width="350" height="450px"
+                                 alt="Beyaz spor üstü" class="product-image mt-2">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="card-title">{{ product.name }}</h2>
+                        <h3 class="price">{{ product.price * 2 }} TL</h3>
+                        <p class="price-detail"> [2/{{ product.amount }}] adet | {{ product.price }} TL /adet</p>
+
+                        <div class="mb-3" style="font-weight: 600">
+                            {% for color in product.colors %}
+                                {{ color.name }}
+                                {% if loop.index - 1 !=  product.colors|length - 1 %}
+                                    /
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+
+                        <div class="mb-3">
+                            {% if product.colors|length == 1 %}
+                                <img width="80" height="100px" src="{{ product.images[0].name }}" alt="">
+                            {% else %}
+                                <img width="80" height="100px" src="{{ product.images[0].name }}" alt="">
+                                <img width="80" height="100px" src="{{ product.images[3].name }}" alt="">
+                            {% endif %}
+                        </div>
+
+                        <button class="size-btn btn btn-light">S</button>
+                        <button class="size-btn btn btn-light">M</button>
+                        <button class="size-btn btn btn-light">L</button>
+                        <button class="size-btn btn btn-light">XL</button>
+                        <button class="size-btn btn btn-light">XXL</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>

@@ -1,5 +1,6 @@
-from hm import db
+import json
 
+from hm.extensions import db
 
 class Size(db.Model):
     __tablename__ = "size"
@@ -8,3 +9,6 @@ class Size(db.Model):
 
     def __init__(self, name):
         self.name = name
+
+    def __repr__(self):
+        return json.dumps({'id': self.id, 'name': self.name})

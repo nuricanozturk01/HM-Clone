@@ -12,6 +12,7 @@ from hm.model.size import Size
 from hm.model.image import Image
 from hm.product_details.views import product_details
 from hm.search_results.views import search_results
+from hm.loader.loader import loader
 
 
 def generate_secret_key(length=24):
@@ -30,3 +31,4 @@ db.init_app(app)
 app.register_blueprint(core)
 app.register_blueprint(search_results)
 app.register_blueprint(product_details)
+app.register_blueprint(loader)

@@ -1,3 +1,5 @@
+import json
+
 from hm import db
 
 
@@ -9,3 +11,5 @@ class Image(db.Model):
     def __init__(self, name):
         self.name = name
 
+    def __repr__(self):
+        return json.dumps({'id': self.id, 'name': self.name})

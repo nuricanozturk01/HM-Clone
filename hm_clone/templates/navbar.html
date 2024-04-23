@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/main.css') }}">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -11,7 +12,7 @@
                     <a class="nav-link" href="#">Mağaza Bul</a>
                 </li>
             </ul>
-            <a class="navbar-brand mx-auto" href="#"> <!-- Added mx-auto class to center the logo -->
+            <a class="navbar-brand mx-auto" href="/"> <!-- Added mx-auto class to center the logo -->
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1280px-H%26M-Logo.svg.png"
                      alt="sad" width="60px">
             </a>
@@ -53,12 +54,32 @@
                 </ul>
             </div>
 
-            <input class="" placeholder="Ürün Ara" autocomplete="off" role="combobox"
-                   autocapitalize="none"
-                   aria-owns="searchbar-autocomplete" aria-controls="searchbar-autocomplete"
-                   aria-autocomplete="list" aria-expanded="false" aria-label="Ürün ara" minlength="2"
-                   maxlength="200" aria-required="false" type="search" tabindex="0" value/>
+            <div class="bottom-0 end-0 d-flex flex-row align-items-center text-center border-bottom border-dark w-64">
+
+                <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                        <button class="btn" style="border: none" type="button" id="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <input type="text" class="form-control my-input" placeholder="Ara..."
+                           aria-label="Ara..."
+                           aria-describedby="basic-addon1">
+                </div>
+
+            </div>
         </div>
     </div>
 
 </nav>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
