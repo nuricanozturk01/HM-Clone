@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request
+
 from hm.service import hm_service as service
 
 product_details = Blueprint('product_details', __name__)
@@ -22,4 +23,8 @@ def get_image_dict(product):
 def find_product_details_by_id():
     product = service.find_product_by_id(request.args.get("id"))
     image_dictionary = get_image_dict(product)
-    return render_template("product_details.html", product=product, image_dict=image_dictionary)
+    non_sizes = list({"S", "M", "L", "XL", "XXL"} - {size.name for size in product.sizes})
+    return render_template("product_details.html",
+                           non_size_list=non_sizes,
+                           product=product,
+                           image_dict=image_dictionary)

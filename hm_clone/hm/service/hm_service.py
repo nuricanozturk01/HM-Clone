@@ -1,13 +1,17 @@
 from collections import defaultdict
+
 from sqlalchemy.orm import joinedload
 
-from hm.model.product import Product
 from hm.model.category import Category
-from hm.model.size import Size
 from hm.model.color import Color
+from hm.model.product import Product
+from hm.model.size import Size
 
 
 def find_products_by_keyword(keyword):
+    if not keyword:
+        return Product.query.all()
+
     keyword = f'%{keyword}%'
     products = Product.query.filter(Product.name.like(keyword)).all()
     return products

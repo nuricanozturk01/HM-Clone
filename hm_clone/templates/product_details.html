@@ -10,18 +10,19 @@
 </head>
 <body>
 
-<div class="container-fluid mt-4">
+<div class="container-fluid mt-4" style="background-color: #faf9f8 !important;">
 
-    <div class="col my-4">
-        <div class="card">
+    <div class="col my-4" style="background-color: #faf9f8 !important;">
+        <div class="card" style="background-color: #faf9f8 !important;">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-center align-items-center">
                         <div>
-                            <img src="{{ product.images[0].name }}" width="350" height="450px"
-                                 alt="Koyu gri spor üstü" class="product-image">
-                            <img src="{{ product.images[0].name }}" width="350" height="450px"
-                                 alt="Beyaz spor üstü" class="product-image mt-2">
+                            <img src="{{ product.images[0].name }}" width="350px" height="450px"
+                                 alt="desc" class="product-image">
+
+                            <img src="{{ product.images[1].name }}" width="350px" height="450px"
+                                 alt="desc" class="product-image">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -46,13 +47,13 @@
                                 <img width="80" height="100px" src="{{ product.images[3].name }}" alt="">
                             {% endif %}
                         </div>
+                        {% for size in product.sizes %}
+                            <button class="size-btn btn btn-light">{{ size.name }}</button>
+                        {% endfor %}
 
-                        <button class="size-btn btn btn-light">S</button>
-                        <button class="size-btn btn btn-light">M</button>
-                        <button class="size-btn btn btn-light">L</button>
-                        <button class="size-btn btn btn-light">XL</button>
-                        <button class="size-btn btn btn-light">XXL</button>
-
+                        {% for size in non_size_list %}
+                            <button class="size-btn-dis btn btn-light" disabled>{{ size }}</button>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

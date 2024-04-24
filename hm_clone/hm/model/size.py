@@ -2,6 +2,7 @@ import json
 
 from hm.extensions import db
 
+
 class Size(db.Model):
     __tablename__ = "size"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

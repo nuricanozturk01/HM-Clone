@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+
 from hm.service import hm_service as service
 
 core = Blueprint('core', __name__)

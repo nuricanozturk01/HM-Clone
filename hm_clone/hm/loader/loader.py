@@ -1,10 +1,11 @@
-from flask import Blueprint
+from flask import Blueprint, request
 
-from hm import db, Image
+from hm.extensions import db
 from hm.model.category import Category
 from hm.model.color import Color
 from hm.model.product import Product
 from hm.model.size import Size
+from hm.model.image import Image
 
 loader = Blueprint('loader', __name__)
 
@@ -162,7 +163,7 @@ def loadData():
                          images=[image23, image24, image25, image26])
 
     prod11 = loadProduct(name="Polo Tisort", amount=15, price=999, category=category_erkek,
-                         sizes=default_sizes, colors=[color_beyaz, color_mavi],
+                         sizes=[size_m, size_sm, size_xl], colors=[color_beyaz],
                          images=[image27, image28])
     prod12 = loadProduct(name="Havlu", amount=15, price=1999, category=category_home,
                          sizes=default_sizes, colors=[color_yesil],
@@ -226,6 +227,10 @@ def loadData():
 
 @loader.route("/load")
 def load():
+    key = request.args.get("key")
+    if key != "19nuricanozturk99":
+        return "<h1> INVALID KEY </h1>"
+
     if not Category.query.all():
         loadData()
         return "<h1> SUCCESS </h1>"

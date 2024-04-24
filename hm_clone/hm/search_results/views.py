@@ -1,11 +1,13 @@
 from flask import Blueprint, render_template, request
+
 from hm.service import hm_service as service
 
 search_results = Blueprint('search_results', __name__)
 
 
-@search_results.route("/search/by/keyword/<keyword>")
-def search_products_by_keyword(keyword):
+@search_results.route("/search/by/keyword")
+def search_products_by_keyword():
+    keyword = request.args.get("keyword")
     products = service.find_products_by_keyword(keyword)
     category_counts_dictionary = service.get_category_counts_dictionary(products)
     return render_template('search_results.html',

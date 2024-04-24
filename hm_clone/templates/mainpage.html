@@ -11,7 +11,7 @@
 
 
 <body>
-<div class="" style="padding: 15px;">
+<div style="padding: 15px;background-color: #faf9f8 !important;">
     <div class="col">
         <button id="kadınBtn" class="my-btn btn btn-light"
                 onclick="changeButtonColor('kadınBtn', '/find_products_by_category/Kadın')">Kadın
@@ -38,7 +38,7 @@
 
 
     <div class="slider-container container mt-5">
-        <div class="slick-slider">
+        <div class="slick-slider" style="background-color: #faf9f8 !important;">
             {% set num_sliders = ((products|length - 1) // 4) + 1 %}
             {% for slider_index in range(num_sliders) %}
                 <div class="slick-slide">

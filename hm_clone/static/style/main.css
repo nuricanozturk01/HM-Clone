@@ -1,3 +1,7 @@
+body {
+    background-color: #faf9f8 !important;
+}
+
 .my-nav {
     padding: 60px;
 }
@@ -107,5 +111,11 @@
 
 .size-btn {
     padding: 20px !important;
-    background-color: #faf9f8 !important;
+    background-color: white !important;
+}
+
+.size-btn-dis {
+    color: black !important;
+    padding: 20px !important;
+    background-color: #e4e4e4 !important;
 }
