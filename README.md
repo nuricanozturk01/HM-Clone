@@ -5,17 +5,14 @@ This project aims to create a slimmed-down e-commerce fashion website similar to
 ## Project Features
 
 ### Home Screen
-
 The home page will display at least 16 new products (4 in each slide). Categories of new products will be displayed dynamically above the slider and will show all new products in the selected category.
-
+- <img width="900" src="./images/main_page.png">
 ### Search Results Screen
-
 Search results for free text will display categories and counts in the left panel and the results in the right panel. Results can be ordered by price ascending or descending and filtered by size. No action is needed for the favorite icon.
-
+- <img width="900" src="./images/search_Result.png">
 ### Detail Screen
-
 The detail page will include attributes such as ad number, description, image (at least 1), and category.
-
+- <img width="900" src="./images/product_detail.png">
 ### Used in this project:
 - Python Flask
 - Jinja2
