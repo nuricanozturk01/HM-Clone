@@ -39,4 +39,4 @@ The detail page will include attributes such as ad number, description, image (a
 - ![hm_db](https://github.com/nuricanozturk01/HM-Clone/assets/62218588/3955c563-2b15-405a-a580-60fb61c27b82)
 
 ### Deployment:
-**Python Anywhere:**https://nuricanozturk.pythonanywhere.com/
+**Python Anywhere:** https://nuricanozturk.pythonanywhere.com/
