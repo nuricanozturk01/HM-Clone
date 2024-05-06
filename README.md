@@ -1,4 +1,4 @@
-# E-Commerce Fashion Website Project (Midterm Project)
+# E-Commerce Fashion Website Project (Midterm Project) - Basic Clone
 
 This project aims to create a slimmed-down e-commerce fashion website similar to HM.com. It will be developed using Flask framework and hosted on a cloud provider.
 
@@ -36,4 +36,4 @@ The detail page will include attributes such as ad number, description, image (a
 - ![hm_db](https://github.com/nuricanozturk01/HM-Clone/assets/62218588/3955c563-2b15-405a-a580-60fb61c27b82)
 
 ### Deployment:
-**Python Anywhere:** https://nuricanozturk.pythonanywhere.com/
+**Python Anywhere:** Removed
